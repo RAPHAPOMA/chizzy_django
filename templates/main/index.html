@@ -1,0 +1,443 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+{% block content %}
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-lg">
+      <div>
+        <i class="nenye ri-plug-fill"></i>
+        <a class="navbar-brand fw-bold" href="">TheAIplug</a>
+      </div>
+      
+
+      <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+          <li class="navitema">
+            <a class="nav-link text-dark active fw-bold" aria-current="page" href="#">Favourite</a>
+          </li>
+          <li class="navitemb">
+            <a class="nav-link text-dark active fw-bold" href="/signup.html">Discover</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Discover
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Submit
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <div class="soso d-flex gap-5 text-center">
+                <i class="ri-youtube-fill"></i>
+                <i class="ri-linkedin-box-fill"></i>
+                <i class="ri-twitter-fill"></i>
+              </div>
+              
+            </ul>
+          </li>
+
+          {% if user.is_authenticated %}
+            <li class="naviteme d-flex ">
+              <i class="tech mt-2 ri-google-fill"></i>
+              <!-- <a class="nav-link text-dark text-center active fw-bold" href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?login_hint&prompt=login&response_type=code&redirect_uri=https%3A%2F%2Fauth0.openai.com%2Flogin%2Fcallback&scope=email%20profile&state=hUmhDWVguo-6GlkI96RQiP3cy_zYODSg&client_id=799222349882-ne3i0s9jdm5s0p7ll2d7tlsi1vc1halt.apps.googleusercontent.com&service=lso&o2v=1&flowName=GeneralOAuthFlow">Log in</a> -->
+              <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" />
+            </li>
+          {% else %}
+            <li class="naviteme d-flex ">
+              <i class="tech mt-2 ri-google-fill"></i>
+              <!-- <a class="nav-link text-dark text-center active fw-bold" href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?login_hint&prompt=login&response_type=code&redirect_uri=https%3A%2F%2Fauth0.openai.com%2Flogin%2Fcallback&scope=email%20profile&state=hUmhDWVguo-6GlkI96RQiP3cy_zYODSg&client_id=799222349882-ne3i0s9jdm5s0p7ll2d7tlsi1vc1halt.apps.googleusercontent.com&service=lso&o2v=1&flowName=GeneralOAuthFlow">Log in</a> -->
+              <a class="nav-link text-dark text-center active fw-bold" href="{% provider_login_url 'google' %}">Log in</a>
+            </li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="loose">
+    <div class="container">
+      <div class="col-6">
+        <h1 class="posky text-light active display-4 mt-4">AI is changing the world !!</h1>
+
+      </div>
+
+    </div>
+
+    <div class="tools">
+      <div class="container-lg">
+  
+       <div class="input-group">
+        <input class="form-control" placeholder="search 879 AI tools and categories...."></input>
+        <span class="input-group-btn">
+          <button class="fan btn-search" type="button"><i class="fa fa-search fa-w"></i>search</button>
+  
+        </span>
+       </div>
+
+       <div class="harry mt-5 d-flex gap-5">
+        <a href="">latest AI tools</a>
+        <div>
+          <a href="">check news update</a>
+        </div>
+       </div>
+
+       <div class="tecla d-flex mt-5 gap-3 align-items-center justify-content-center">
+        <i class="ri-arrow-left-line"></i>
+        <a href="">editing</a>
+        <a href="">editing</a>
+        <a href="">editing</a>
+        <a href="">editing</a>
+        <i class="ri-arrow-right-line"></i>
+       </div>
+       
+      </div>
+    </div>
+
+  </section>
+
+  <section id="topics">
+    <div class="container-lg">
+
+     <div class="row d-flex gy-4 mt-5 justify-content-center align-items-center">
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="/detail_page.html">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="{% static 'img/piggy_magic.webp' %}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+
+      <div class="col-lg-4 col-md-7 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="{% static 'img/copy.webp' %}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="{% static 'img/durable.webp' %}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+      
+     <!-- </div> -->
+
+     <!-- <div class="row d-flex gy-4 mt-1 justify-content-center align-items-center"> -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="{% static 'img/gpt.webp' %}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="{% static 'img/piggy_magic.webp' %}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="{% static 'img/rota.webp' %}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="/img/studio.webp" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="/img/riffussion.webp" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="">
+        <div class="a card" >
+          <div class="pic1">
+            <img src="/img/drake.webp" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="game d-flex gap-5">
+             <h5>Piggy Magic</h5> 
+              <div class="d-flex">
+                <i class="juve ri-heart-2-fill"></i>
+              </div>
+            </div>
+            <p class="card-text text-muted active">A cutting-edge AI tool that enables 
+              users to create high-quality, engaging, and entertaining content in</p>
+              <div class="hashtag d-flex gap-5">
+                <h6>#piggy mask</h6>
+                <h6>#piggy mask</h6>
+              </div>
+              <div class="kaka  gap-5 d-md-flex">
+                <button class="stan btn btn-primary me-md-2" type="button">visit the website</button>
+                <button class="stan btn btn-primary" type="button">add to Favourite</button>
+              </div>
+          </div>
+        </div>
+      </a>
+      </div>
+      
+     </div>
+   </div>
+
+ </div>
+</section>
+
+<section id="footer">
+  <div class="container-lg">
+    <div class="row gy-4">
+      <div class="col-lg-5 info text-dark">
+        <a href=""></a>
+        <i class="soul ri-plug-fill"></i>
+        <p>Artificial intelligence is intelligence—perceiving, synthesizing, 
+          and inferring information—demonstrated by machines, as 
+          opposed to intelligence displayed by non-human animals and humans. </p>
+          <div class="socials d-flex mt-4 gap-3 fs-5">
+            <a class="text-decoration-none" href="#"><i class="ri-twitter-fill"></i></a>
+            <a class="text-decoration-none" href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a class="text-decoration-none" href="#"><i class="ri-instagram-line"></i></a>
+            <a class="text-decoration-none" href="#"><i class="ri-linkedin-box-fill"></i></a>
+          </div>
+
+      </div>
+     
+
+      <div class=" col-lg-2 text-dark">
+        <h4>Featured</h4>
+        <p>whisper</p>
+        <p>Alignment</p>
+        <p>Start up Fund</p>
+        <p>DALL·E 2</p>
+        <p>web 3</p>
+      </div>
+      <div class=" col-lg-2 text-dark">
+        <h4>API</h4>
+        <p>Overview</p>
+        <p>Pricing</p>
+        <p>Docs</p>
+        <p>Examples</p>
+        <p>Terms and Policies</p>
+      </div>
+      <div class="col-lg-3 text-dark active">
+        <h4>Information</h4>
+        <p>About Us</p>
+        <p>Our Research</p>
+        <p>publications</p>
+        <p>newsrooms</p>
+
+      </div>
+
+    </div>
+
+    <div class="container mt-4 text-dark">
+      <div class="fs-9 justify-content-center d-flex">
+        <i class="ri-copyright-line"></i>
+        <p>copyright TheAIplug.All right reserved</p><br>
+        <p>2022</p>
+      </div>
+      <p class="text-center">designed by Bubulanet</p>
+
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}
+
+

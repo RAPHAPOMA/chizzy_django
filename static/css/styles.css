@@ -1,0 +1,165 @@
+*{
+    font-family: 'Open Sans', sans-serif; 
+}
+section{
+    padding: 60px 0px;
+}
+
+.harry a{
+    background-color: #0A58CA;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 10px 10px 10px;
+}
+
+
+
+.navbar-brand{
+    font-size: 2rem;
+}
+
+.html, body{
+    overflow-x: hidden;
+}
+
+.navbar{
+    background-color: white;
+}
+
+.nenye{
+    font-size: 2rem;
+}
+
+.clue a{
+    padding: 0px 100px 0px 10px;
+}
+
+.soul{
+   font-size: 4rem; 
+}
+
+
+
+
+.navbar-brand{
+    color: rgb(5, 92, 19) !important;
+}
+
+#loose{
+    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("/static/img/ai_pics.jpg");
+    background-attachment: fixed;
+    height: 400px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.oma, .lay, .buju, .ayo{
+    /* display: flex !important; */
+   
+}
+
+#tools{
+    margin-top: 50px !important;
+}
+
+#footer{
+    background-color: rgb(223,255,226) ;
+}
+
+.input-group{
+    align-items: center;
+    justify-content: center;   
+}
+
+.pic1:hover img{
+    transform: scale(1.1);
+}
+
+.pic1 img{
+    transition: all 0.5s ease;
+}
+
+aj{
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.tecla a{
+    background-color: whitesmoke;
+    border-radius: 10px;
+   color: #424242;
+   padding: 7px 7px 7px 7px;
+
+}
+
+
+
+.btn-search{
+    background: #424242;
+    border-radius: 0;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #1c1c1c;
+    
+}
+
+.btn-search:link, .btn-search:hover{
+    color: #fff;
+}
+
+.btn-search:active, .btn-search:hover{
+    background: #1c1c1c;
+    color: #fff;
+}
+
+.game{
+    gap: 200px !important;
+}
+
+.juve{
+    font-size: 30px;
+}
+
+.kaka{
+    gap: 100px !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.stan{
+    font-size: 10px;
+}
+
+.harry{
+    align-items: center;
+    justify-content: center;
+
+}
+
+.fan{
+    padding: 19px 5px 19px 5px;
+    border-radius: 4px;
+    background-color: #0A58CA;
+}
+
+.philo{
+    margin-top: 10px;
+}
+
+.raga a{
+    border-radius: 10px;
+    background-color: bisque;
+    color: black;
+    padding: 10px 5px 10px 5px;
+}
+
+.whyne{
+    color: rgb(148, 7, 94);
+}
+
+.rem{
+    gap: 500px !important;
+}
